@@ -1,4 +1,4 @@
-# Part 01
+# Part 01: Recursion
 
 ## call-by-vale vs call-by-name
 
@@ -46,3 +46,32 @@ def x = loop // this is OK
 
 val x = loop // this never ends ...
 ```
+
+## tail recursion
+
+A typical implementation of a function that calculates the factorial of a number usually looks like this:
+
+```scala
+def fact(x: Int): Int =
+    if (x=0) 0
+    else x * fact(x - 1)
+```
+
+which brings us to an execution like this:
+
+```
+4 * (3 * (2 * (1 * factorial(0)))
+```
+
+As we can see, when the function reaches the last step of its execution it must use information from the previous function calls. In this way, we force the interpreter to keep a record of all the calls in the execution stack.
+
+We call **tail recursion** the type of recursive implementations that avoid this kind of behavior. For example:
+
+```scala
+@tailrec
+def fact(x: Int, acc: Int): Int =
+    if (x==0) acc
+    else fact(x-1, x*acc)
+```
+
+* the `@tailrec` notation verifies that the function is tail-recursive.

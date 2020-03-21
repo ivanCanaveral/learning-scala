@@ -1,5 +1,7 @@
 package numbers
 
+import scala.annotation.tailrec
+
 object NumericFunctions{
 
     def squareRoot(x: Double): Double = {
@@ -21,4 +23,18 @@ object NumericFunctions{
         iterate(1, 10)
     }
 
+    @tailrec
+    def fact(x: Int, acc: Int): Int =
+        if (x == 0) acc
+        else fact(x-1, x*acc)
+
+    def gcd(a: Int, b: Int): Int ={
+        
+        @tailrec
+        def euclid(x: Int, y: Int): Int =
+            if (y == 0) x
+            else euclid(y, x % y)
+        
+        if (a > b) euclid(a, b) else euclid(b, a)
+    }
 }
