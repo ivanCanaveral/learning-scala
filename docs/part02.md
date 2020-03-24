@@ -132,3 +132,11 @@ class Rational(x: Int, y: Int){
   override def toString = this.num + "/" + this.den
 }
 ```
+
+## type alias
+
+We can define type aliases using the keyword `type`.
+
+```scala
+type CharacteristicFunction = Int => Boolean
+```
