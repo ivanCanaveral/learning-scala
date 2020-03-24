@@ -1,5 +1,5 @@
 //import part01.sqroot.squareRoot
-import numbers.{NumericFunctions, RangeSum => RS}
+import numbers.{NumericFunctions, RangeSum => RS, Rational}
 
 object Main extends App {
     println()
@@ -14,5 +14,8 @@ object Main extends App {
     println("Square of numers between 1 and 9 sums ", RS.highOrderSumRange((x: Int) => x * x, 1, 9, 0))
     println("The same, but in a more functinoal approach ", RS.functionalSumRange((x: Int) => x*x) (1, 9, 0))
     println("And now, like a pro", RS.currySumRange((x: Int) => x*x)(1, 9, 0))
+    val p: Rational = new Rational(1,3)
+    val q: Rational = new Rational(1,2)
+    println("The sum of 1/3 and 1/2 is: ", p.sum(q))
     println()
 }
