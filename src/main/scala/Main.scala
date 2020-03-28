@@ -1,5 +1,6 @@
 //import part01.sqroot.squareRoot
 import numbers.{NumericFunctions, RangeSum => RS, Rational}
+import trees.EmptyBTree
 
 object Main extends App {
     println()
@@ -17,5 +18,9 @@ object Main extends App {
     val p: Rational = new Rational(1,3)
     val q: Rational = new Rational(1,2)
     println("The sum of 1/3 and 1/2 is: ", p.sum(q))
+    println()
+    println("---- Part 03 ----")
+    val t: EmptyBTree = new EmptyBTree
+    println("This is a Tree: ", t.add(2))
     println()
 }

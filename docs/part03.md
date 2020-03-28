@@ -17,3 +17,6 @@ class EmptyBinaryTree extends Tree {
   def add(x: Int): BinaryTree = new BinaryTree(x, new EmptyBinaryTree, new EmptyBinaryTree)
 }
 ```
+
+The direct or indirect superclasses of a class `C` are called __base classes__
+of `C`. So, the base classes of `EmptyBinatyTree` are `Tree` and `Object`.
