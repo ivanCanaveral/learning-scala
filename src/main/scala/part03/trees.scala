@@ -1,5 +1,9 @@
 package trees
 
+trait Cointainer {
+    def contains(x: Int): Boolean
+}
+
 abstract class BTree {
   def contains(x: Int): Boolean
   def add(x: Int): BTree
@@ -18,7 +22,7 @@ class EmptyBTree extends BTree {
 /*
 * Elements are unique in this implementation
 */
-class NonEmptyBTree(elem: Int, left: BTree, right: BTree) extends BTree {
+class NonEmptyBTree(elem: Int, left: BTree, right: BTree) extends BTree with Cointainer{
   def contains(x: Int) =
     if (x < elem) left contains x
     else if (x > elem) right contains x
