@@ -1,6 +1,7 @@
 //import part01.sqroot.squareRoot
 import numbers.{NumericFunctions, RangeSum => RS, Rational}
 import trees.EmptyBTree
+import linked.list.{EmptyLinkedList, NonEmptyLinkedList}
 
 object Main extends App {
     println()
@@ -22,5 +23,8 @@ object Main extends App {
     println("---- Part 03 ----")
     val t: EmptyBTree = new EmptyBTree
     println("This is a Tree: ", t.add(2))
+    val el: EmptyLinkedList = new EmptyLinkedList
+    val nel: NonEmptyLinkedList = el.add(1)
+    println("We have created a list with", nel.length, "elements.")
     println()
 }

@@ -1,8 +1,24 @@
 # learning-scala
 
-Notes about scala
+In this repository you can find some basic notes and code examples about my first steps with **scala**. It is structured in two main folders: `src` and `docs`.
+
+* `src`: All the `.scala` files, organized in folders. One folder for each part or topic.
+* `docs`: Markdown files with some interesting notes on each part.
+
+## Contents
+
+This repository is organized in parts. Below you can find its contents.
+
+* **Part 1:** call-by-value vs call-by-name. Recursion.
+* **Part 2:** Hihgher order functions and classes.
+* **Part 3:** Project structure and special types.
 
 ## Running the examples
+
+
+### Running it using the Dokerfile
+
+You can build and run a simple container ready to run scala using the `Dockerfile` we provide. In order to do this, just execute the following commands:
 
 ```
 docker build -t learning-scala .
@@ -13,3 +29,17 @@ docker attach learning-scala-container
 Once there, type `sbt` to start *scala build tools* cli.
 
 To launch a scala console, type `console`. To compile your proyect type `compile`, to run it `run`, and `~run` to keep it watching.
+
+### Running it using docker-compose
+
+However, if you have installed `docker-compose` in addition to `docker`, you can do the same by just typing:
+
+```bash
+docker-compose up
+```
+
+If you want to access the container, yo can do it by typing
+
+```bash
+docker-compose exec scala bash
+```

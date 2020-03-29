@@ -68,6 +68,19 @@ We can inherit using `extends` but also using `with`:
 NonEmptyBTree(...) extends BTree with Cointainer
 ```
 
+### tip
+
+These lines are equivalent:
+
+```scala
+class MyClass(val head: Int, val tail: IntList) extends IntList ...
+
+class MyClass(_head: Int, _tail: IntList) extends IntList {
+  val head = _head
+  val tail = _tail
+}
+```
+
 ## Special types
 
 ### Any, AnyRef, AnyVal

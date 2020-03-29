@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    scala:
+        build: .
+        command: "sbt ~run"
+        container_name: learning-scala
+        volumes:
+            - ~/workspace/learning-scala:/scala
