@@ -123,19 +123,27 @@ val z: Int = null // error: type mismatch
 We can use parametrized types also:
 
 ```scala
-trait Plist[T] {
+trait PList[T] {
     def isEmpty: Boolean
     def head: T
-    def tail: Plist[T]
+    def tail: PList[T]
 }
 
-class FullPlist[T](val head:T, val tail: Plist[T]) extends Plist[T] {
+class FullPList[T](val head:T , val tail: PList[T]) extends PList[T] {
     def isEmpty = false
 }
 
-class EmptyPList[T] extends Plist[T] {
+class EmptyPList[T] extends PList[T] {
     def isEmpty = true
     def head = throw new NoSuchElementException("Empty head")
     def tail = throw new NoSuchElementException("Empty tail")
 }
+```
+
+Functions also can have type parameters:
+
+```scala
+def monoList[T](elem: T) = new FullPList(elem: T, new EmptyList[T])
+
+monoList[Double](1.0)
 ```

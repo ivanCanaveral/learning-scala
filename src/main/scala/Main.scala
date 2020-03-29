@@ -2,7 +2,7 @@
 import numbers.{NumericFunctions, RangeSum => RS, Rational}
 import trees.EmptyBTree
 import linked.list.{EmptyLinkedList, NonEmptyLinkedList}
-import plist.{EmptyPList, FullPlist}
+import plist.{EmptyPList, FullPList}
 
 object Main extends App {
     println()
@@ -27,7 +27,7 @@ object Main extends App {
     val el: EmptyLinkedList = new EmptyLinkedList
     val nel: NonEmptyLinkedList = el.add(1)
     println("We have created a list with", nel.length, "elements.")
-    val pl: FullPlist[Double] = new FullPlist(3.0, new EmptyPList)
+    val pl: FullPList[Double] = new FullPList(3.0, new EmptyPList[Double])
     println("This is a parametrized list ", pl)
     println()
 }
