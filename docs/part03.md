@@ -117,3 +117,25 @@ val x = null // x: Null
 val y: String = null // y: String
 val z: Int = null // error: type mismatch
 ```
+
+## Parametrized types
+
+We can use parametrized types also:
+
+```scala
+trait Plist[T] {
+    def isEmpty: Boolean
+    def head: T
+    def tail: Plist[T]
+}
+
+class FullPlist[T](val head:T, val tail: Plist[T]) extends Plist[T] {
+    def isEmpty = false
+}
+
+class EmptyPList[T] extends Plist[T] {
+    def isEmpty = true
+    def head = throw new NoSuchElementException("Empty head")
+    def tail = throw new NoSuchElementException("Empty tail")
+}
+```
