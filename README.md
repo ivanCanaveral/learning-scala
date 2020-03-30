@@ -9,9 +9,10 @@ In this repository you can find some basic notes and code examples about my firs
 
 This repository is organized in parts. Below you can find its contents.
 
-* **Part 1:** call-by-value vs call-by-name. Recursion.
-* **Part 2:** Hihgher order functions and classes.
-* **Part 3:** Project structure and special types.
+* **Part 1:** [call-by-value vs call-by-name. Recursion.](docs/part01.md)
+* **Part 2:** [Hihgher order functions and classes.](docs/part02.md)
+* **Part 3:** [Project structure and special types.](docs/part03.md)
+* **Part 4:** [Project structure and special types.](docs/part04.md)
 
 ## Running the examples
 
