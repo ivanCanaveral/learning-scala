@@ -29,7 +29,17 @@ In scala, each application should contain an object with a main method.
 
 ```scala
 object Hello {
-  def main(args: Array[String]) = println(”hello world!”)
+  def main(args: Array[String]) = println("hello!")
+}
+```
+
+The name of the object is not very important.
+
+However, scala enables an interface that makes it shorter to write the main function. We can create an object that extends from `App`, and all the code we include in it (it doesn't need to be inside a function) will be executed. Ihis way, the lines above are equivalen to these lines:
+
+```scala
+object Main extends App {
+  println("hello!")
 }
 ```
 
