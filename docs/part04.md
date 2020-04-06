@@ -35,3 +35,19 @@ In scala, by default, the parametrized types are **novariant**, but we can speci
 * `class C[+A] {...}` -> C is **covariant**
 * `class C[-A] {...}` -> C is **contravariant**
 * `class C[A] {...}` -> C is **novariant**
+
+### Type variance of functions
+
+Functions are *contravariant* in in their argument types and *covariant* in their the type of its outputs.
+
+```scala
+trait Function[-A, -O] {
+    def apply(x: A): O
+}
+```
+
+There are some rules that we should keep in mind:
+
+ * **covariant** types can only appear in results
+ * **contravariant** types can only appear in parameters
+ * **invariant** types can appear everywhere
