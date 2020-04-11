@@ -51,3 +51,32 @@ There are some rules that we should keep in mind:
  * **covariant** types can only appear in results
  * **contravariant** types can only appear in parameters
  * **invariant** types can appear everywhere
+
+ ## Practical example
+
+ Supongamos que tenemos una definición de listas en lazadas y queremos definir un método `prepend`.
+
+ ```scala
+trait List[+T] {
+    def preprend(elem: T: List[T])
+}
+ ```
+
+ Esto no funcionaría por los siguientes motivos:
+
+ * Dada la definición de `+T`, este parámetro únicamente puede aparecer en los outputs, pero no en los inputs.
+ * Supongamos que tenemos el tipo `IntSet`, tal que `EmptyIntSet <: IntSet` y `NonEmptyIntSet <: IntSet`. Supongamos ahora además que `xs: IntSet`. Entonces, no habría problema en aplicar la siguiente operación: `xs.prepend(x: EmptyIntSet)`.
+ * Ahora, como la definición del parámetro es `+T`, trendríamos que si `ys: NonEmptyIntSet`, entonces `List[NonEmptyIntSet] <: List[IntSet]`, por lo que el tipo de `ys` es subtipo del tipo de `xs`. Sin embargo, `ys.prepend(y: EmptyIntSet)` no es una operación válida.
+ * Así, hemos encontrado una propiedad `q(x)` que se cumple para la superclase `IntSet`, pero no para una de sus subclases, `NonEmptyIntSet`, en contra del *Principio de Sustitución de Liskov*.
+
+ Por tanto nuestra definición de tipos no es correcta. Sin embargo, podemos hacer un pequeño arreglo rápido para poder trabajar con ello. 
+
+ Si utilizamos cotas para el tipo de parámetros se puede solucionar fácilmente:
+
+```scala
+def preprend [U >: T] (elem: U): List[U] {
+    ...
+}
+```
+
+Con esta definición estamos forzando a que `U` sea subtipo de algo. De este modo, forzaríamos a que estos tipos sean o bien `NonEmptyIntSet` o bien `EmptyIntSet`. (?) no lo tengo claro...
