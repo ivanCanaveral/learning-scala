@@ -38,4 +38,4 @@ object Number {
 > ```scala
 > Number(1)
 > ```
-> Por supuesto, apply no se uiliza únicamante en los generadores, si no que puede utilizarse en cualquier clase u objeto. Aquí, las `case classes` lo utilizan junto al patrón del objeto generador para poder ahorrarnos tener que escribir la palabra `new` cada vez que generamos un nuevo `Number`, y porque además el resultado de esta combianción es especialmente adecuado para trabajar con la herramienta que introduciremos a continuación: **pattern matching**.
+> Por supuesto, apply no se utiliza únicamante en los generadores, si no que puede utilizarse en cualquier clase u objeto. Aquí, las `case classes` lo utilizan junto al patrón del objeto generador para poder ahorrarnos tener que escribir la palabra `new` cada vez que generamos un nuevo `Number`, y porque además el resultado de esta combianción es especialmente adecuado para trabajar con la herramienta que introduciremos a continuación: **pattern matching**.
