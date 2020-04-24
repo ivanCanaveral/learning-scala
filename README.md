@@ -13,6 +13,9 @@ This repository is organized in parts. Below you can find its contents.
 * **Part 2:** [Hihgher order functions and classes.](docs/part02.md)
 * **Part 3:** [Project structure and special types.](docs/part03.md)
 * **Part 4:** [Advanced parametrized types.](docs/part04.md)
+* **Part 5:** [Case classes.](docs/part05.md)
+* **Part 6:** [Pattern matching.](docs/part06.md)
+* **Part 7:** [Lists](docs/part07.md)
 
 ## Running the examples
 
