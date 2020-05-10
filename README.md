@@ -16,6 +16,7 @@ This repository is organized in parts. Below you can find its contents.
 * **Part 5:** [Case classes.](docs/part05.md)
 * **Part 6:** [Pattern matching.](docs/part06.md)
 * **Part 7:** [Lists](docs/part07.md)
+* **Part 8:** [More on Lists](docs/part08.md)
 
 ## Running the examples
 
